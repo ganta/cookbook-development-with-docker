@@ -19,8 +19,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.log_level = :debug
-    chef.data_bags_path = "data_bags"
-    chef.json = {
-    }
+    chef.add_recipe "kitchen-docker"
   end
 end
