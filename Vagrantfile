@@ -19,6 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.log_level = :debug
+    chef.add_recipe "docker-completion"
     chef.add_recipe "kitchen-docker"
   end
 end
